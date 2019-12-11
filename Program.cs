@@ -26,6 +26,26 @@ namespace AnalizatorTekstow
                 {
                     Console.WriteLine(Downloader(_url, _path));
                 }
+                if (menuOption == 4)
+                {
+
+
+                    string str = System.IO.File.ReadAllText(@"C:\Users\Tomek\source\repos\ConsoleApp2\ConsoleApp2\tekst.txt");//path to the txt file
+                    for (int i = 0; i < str.Length; i++)
+                    {
+                        //Checks whether given character is punctuation mark  
+                        if (str[i] == '!' || str[i] == ',' || str[i] == ';' || str[i] == '.' || str[i] == '?' || str[i] == '-' ||
+                                   str[i] == '\'' || str[i] == '\"' || str[i] == ':')
+                        {
+                            countPuncMarks++;
+
+                        }
+                    }
+
+                    Console.WriteLine("Total number of punctuation characters exists in string: " + countPuncMarks);
+
+
+                }
             }
 
             //metod downloading file from url, and saving it in the directory path
